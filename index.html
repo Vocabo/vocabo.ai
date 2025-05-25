@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="siteTitle">vocabo.ai - Sprachen lernen mit KI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- GSAP für fortgeschrittene Animationen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- Three.js für 3D-Elemente -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Floating Words Background -->
+    <div id="floating-words-container"></div>
+    
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <header class="glass-nav">
+        <nav>
+            <div class="nav-left">
+                <div class="logo">
+                    <div class="logo-3d">V</div>
+                    <span>ocabo.ai</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active" data-translate="navHome">Startseite</a></li>
+                    <li><a href="#features" class="nav-link" data-translate="navFeatures">Funktionen</a></li>
+                    <li><a href="#pricing" class="nav-link" data-translate="navPricing">Preise</a></li>
+                    <li><a href="#testimonials" class="nav-link" data-translate="navTestimonials">Testimonials</a></li>
+                    <li><a href="#faq" class="nav-link" data-translate="navFAQ">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <div class="language-globe">
+                        <div class="globe-3d">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                    <button id="langDe" class="lang-btn">DE</button>
+                    <span class="lang-separator">|</span>
+                    <button id="langEn" class="lang-btn">EN</button>
+                </div>
+                <div class="auth-buttons">
+                    <button id="loginBtn" class="btn-login" data-translate="loginButton">Anmelden</button>
+                    <button id="registerBtn" class="btn-register" data-translate="registerButton">Registrieren</button>
+                </div>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <!-- 3D Background Canvas entfernt -->
+            
+            <div class="hero-content">
+                <h1 data-translate="heroTitle" class="animated-text">Lerne Sprachen mit der Kraft der KI</h1>
+                <p data-translate="heroSubtitle">Mit vocabo.ai und künstlicher Intelligenz personalisierte Lektionen und Übungen für Englisch und Französisch entdecken.</p>
+                <div class="hero-cta-container">
+                    <button class="hero-cta glow-effect" data-translate="heroCTA">
+                        Jetzt starten
+                        <span class="glow-container">
+                            <span class="glow"></span>
+                        </span>
+                    </button>
+                    <button class="hero-secondary-cta" data-translate="heroSecondaryCTA">Demo ansehen</button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50000">0</span>
+                        <span class="stat-label" data-translate="statUsers">Nutzer</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1200">0</span>
+                        <span class="stat-label" data-translate="statLessons">Lektionen</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="25">0</span>
+                        <span class="stat-label" data-translate="statLanguages">Sprachen</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div id="hero3D" class="hero-3d">
+                    <div class="floating-card card1 glass-card">
+                        <i class="fas fa-language"></i>
+                        <span>Englisch</span>
+                    </div>
+                    <div class="floating-card card2 glass-card">
+                        <i class="fas fa-brain"></i>
+                        <span>KI-Lernen</span>
+                    </div>
+                    <div class="floating-card card3 glass-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Französisch</span>
+                    </div>
+                    
+                    <!-- Schwebende Wortblöcke -->
+                    <div class="word-block block1">Hello</div>
+                    <div class="word-block block2">Bonjour</div>
+                    <div class="word-block block3">World</div>
+                    <div class="word-block block4">Monde</div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="scroll-text" data-translate="scrollDown">Nach unten scrollen</div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2 data-translate="featuresTitle" class="section-heading">Unsere Funktionen</h2>
+            <div class="section-subtitle" data-translate="featuresSubtitle">Entdecke, was unsere Plattform besonders macht</div>
+            
+            <div class="feature-list">
+                <div class="feature-item glass-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-translate="feature1Title">KI-generierte Lektionen</h3>
+                    <p data-translate="feature1Desc">Vokabeln und Grammatik, maßgeschneidert von der Gemini API für deinen persönlichen Lernfortschritt.</p>
+                </div>
+                <div class="feature-item glass-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 data-translate="feature2Title">Interaktive Übungen</h3>
+                    <p data-translate="feature2Desc">Teste dein Wissen mit dynamisch erstellten Aufgaben, die sich an dein Niveau anpassen.</p>
+                </div>
+                <div class="feature-item glass-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-translate="feature3Title">Fortschritt verfolgen</h3>
+                    <p data-translate="feature3Desc">Behalte deinen Lernfortschritt immer im Blick mit übersichtlichen Statistiken und Visualisierungen.</p>
+                </div>
+                <div class="feature-item glass-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 data-translate="feature4Title">Mehrsprachige Plattform</h3>
+                    <p data-translate="feature4Desc">Webseite auf Deutsch & Englisch, Lektionen für Englisch & Französisch.</p>
+                </div>
+            </div>
+            
+            <div class="features-showcase">
+                <div class="showcase-visual">
+                    <div class="mockup-container">
+                        <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="vocabo.ai App Mockup" class="mockup-img" />
+                        <div class="mockup-overlay glass-card">
+                            <div class="feature-highlight">
+                                <i class="fas fa-magic"></i>
+                                <span data-translate="featureHighlight">KI-Power im Einsatz</span>
+                            </div>
+                        </div>
+                        <div class="mockup-3d-elements">
+                            <div class="mockup-floating-word">Vocabulary</div>
+                            <div class="mockup-floating-word">Learn</div>
+                            <div class="mockup-floating-word">AI</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-content">
+                    <h3 data-translate="showcaseTitle">Lerne auf deine Art</h3>
+                    <p data-translate="showcaseDesc">Unsere intelligente Plattform passt sich deinem Lerntempo und deinen Interessen an. Die KI erstellt personalisierte Lektionen, die genau auf deine Bedürfnisse zugeschnitten sind.</p>
+                    <ul class="showcase-list">
+                        <li data-translate="showcasePoint1">Personalisierte Vokabelpakete</li>
+                        <li data-translate="showcasePoint2">Kontextbasierte Grammatikübungen</li>
+                        <li data-translate="showcasePoint3">Sprachunterstützung durch KI</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works-section">
+            <h2 data-translate="howItWorksTitle" class="section-heading">So funktioniert's</h2>
+            <div class="modern-timeline">
+                <div class="timeline-item-wrapper">
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content glass-card">
+                            <h3 data-translate="step1Title">Registriere dich</h3>
+                            <p data-translate="step1Desc">Erstelle ein Konto und teile uns deine Sprachlernziele mit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-wrapper">
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content glass-card">
+                            <h3 data-translate="step2Title">KI-Analyse</h3>
+                            <p data-translate="step2Desc">Unsere KI erstellt einen personalisierten Lernplan basierend auf deinen Zielen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-wrapper">
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content glass-card">
+                            <h3 data-translate="step3Title">Lerne & Übe</h3>
+                            <p data-translate="step3Desc">Arbeite mit maßgeschneiderten Lektionen und interaktiven Übungen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item-wrapper">
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content glass-card">
+                            <h3 data-translate="step4Title">Verfolge Fortschritte</h3>
+                            <p data-translate="step4Desc">Sieh dir deine Fortschritte an und feiere deine Erfolge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <h2 data-translate="pricingTitle" class="section-heading">Preispläne</h2>
+            <div class="section-subtitle" data-translate="pricingSubtitle">Flexible Pläne für jedes Lernbedürfnis</div>
+            
+            <div class="pricing-container">
+                <div class="pricing-card glass-card" data-tilt>
+                    <div class="pricing-badge" data-translate="pricingBadge1">Beliebt</div>
+                    <div class="pricing-header">
+                        <h3 data-translate="pricingFree">Kostenlos</h3>
+                        <div class="price">0€<span>/Monat</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-translate="pricingFeature1Free">Grundlegende Lektionen</li>
+                        <li data-translate="pricingFeature2Free">Begrenzte KI-Übungen</li>
+                        <li data-translate="pricingFeature3Free">Zugang zu Community</li>
+                    </ul>
+                    <button class="pricing-cta" data-translate="pricingButtonFree">Starten</button>
+                </div>
+                <div class="pricing-card featured glass-card" data-tilt>
+                    <div class="pricing-badge" data-translate="pricingBadge2">Empfohlen</div>
+                    <div class="pricing-header">
+                        <h3 data-translate="pricingPremium">Premium</h3>
+                        <div class="price">9.99€<span>/Monat</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-translate="pricingFeature1Premium">Unbegrenzte Lektionen</li>
+                        <li data-translate="pricingFeature2Premium">Voller KI-Zugang</li>
+                        <li data-translate="pricingFeature3Premium">Persönlicher Lernplan</li>
+                        <li data-translate="pricingFeature4Premium">Fortgeschrittene Übungen</li>
+                    </ul>
+                    <button class="pricing-cta" data-translate="pricingButtonPremium">Jetzt upgraden</button>
+                </div>
+                <div class="pricing-card glass-card" data-tilt>
+                    <div class="pricing-badge" data-translate="pricingBadge3">Neu</div>
+                    <div class="pricing-header">
+                        <h3 data-translate="pricingBusiness">Business</h3>
+                        <div class="price">29.99€<span>/Monat</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-translate="pricingFeature1Business">Team-Verwaltung</li>
+                        <li data-translate="pricingFeature2Business">Fortschrittsberichte</li>
+                        <li data-translate="pricingFeature3Business">Anpassbare Lernpläne</li>
+                        <li data-translate="pricingFeature4Business">Prioritäts-Support</li>
+                    </ul>
+                    <button class="pricing-cta" data-translate="pricingButtonBusiness">Kontaktiere uns</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <h2 data-translate="testimonialsTitle" class="section-heading">Das sagen unsere Nutzer</h2>
+            <div class="section-subtitle" data-translate="testimonialsSubtitle">Erfahrungen von Lernenden wie dir</div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card glass-card" data-tilt>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Avatar">
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-translate="testimonial1">"Ich lerne seit einem Monat Französisch mit vocabo.ai und bin begeistert, wie gut die KI meinen Lernstil versteht."</p>
+                    <p class="testimonial-name">Sarah M.</p>
+                    <p class="testimonial-info" data-translate="testimonialInfo1">Französisch-Lernende, 3 Monate</p>
+                </div>
+                <div class="testimonial-card glass-card" data-tilt>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar">
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text" data-translate="testimonial2">"Die personalisierten Übungen haben mir geholfen, mein Englisch auf ein neues Level zu bringen. Absolut empfehlenswert!"</p>
+                    <p class="testimonial-name">Thomas K.</p>
+                    <p class="testimonial-info" data-translate="testimonialInfo2">Englisch-Lernender, 6 Monate</p>
+                </div>
+                <div class="testimonial-card glass-card" data-tilt>
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Avatar">
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-translate="testimonial3">"vocabo.ai hat meine Art zu lernen revolutioniert. Die KI erkennt genau, wo meine Schwachstellen sind und hilft mir gezielt."</p>
+                    <p class="testimonial-name">Marta L.</p>
+                    <p class="testimonial-info" data-translate="testimonialInfo3">Mehrsprachige Lernende, 1 Jahr</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="faq-section">
+            <h2 data-translate="faqTitle" class="section-heading">Häufig gestellte Fragen</h2>
+            <div class="section-subtitle" data-translate="faqSubtitle">Antworten auf deine Fragen</div>
+            
+            <div class="faq-container">
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3 data-translate="faqQuestion1">Wie funktioniert die KI-Personalisierung?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faqAnswer1">Unsere KI analysiert deine Lernmuster, Stärken und Schwächen und erstellt dann maßgeschneiderte Lektionen und Übungen, die genau auf deine Bedürfnisse zugeschnitten sind.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3 data-translate="faqQuestion2">Kann ich zwischen Sprachen wechseln?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faqAnswer2">Ja, du kannst jederzeit zwischen Englisch und Französisch wechseln oder beide Sprachen parallel lernen.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3 data-translate="faqQuestion3">Wie oft werden neue Inhalte hinzugefügt?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faqAnswer3">Da unsere Inhalte durch KI generiert werden, entstehen kontinuierlich neue Lektionen und Übungen, die auf deine Fortschritte und Interessen abgestimmt sind.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3 data-translate="faqQuestion4">Kann ich vocabo.ai auf allen Geräten nutzen?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faqAnswer4">Ja, vocabo.ai ist vollständig responsiv und funktioniert auf Desktops, Tablets und Smartphones. Dein Lernfortschritt wird über alle Geräte hinweg synchronisiert.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cta" class="cta-section">
+            <div class="cta-container glass-card">
+                <h2 data-translate="ctaTitle">Bereit, deine Sprachreise zu beginnen?</h2>
+                <p data-translate="ctaDescription">Melde dich jetzt an und entdecke eine neue Art des Sprachenlernens mit vocabo.ai.</p>
+                <div class="cta-buttons">
+                    <button class="cta-primary glow-effect" data-translate="ctaButton">Jetzt starten</button>
+                    <button class="cta-secondary" data-translate="ctaButtonSecondary">Mehr erfahren</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <div class="footer-logo">vocabo.ai</div>
+                <p class="footer-slogan" data-translate="footerSlogan">Revolutionäres Sprachenlernen mit KI</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h3 data-translate="footerCol1Title">Navigation</h3>
+                    <ul>
+                        <li><a href="#home" data-translate="navHome">Startseite</a></li>
+                        <li><a href="#features" data-translate="navFeatures">Funktionen</a></li>
+                        <li><a href="#pricing" data-translate="navPricing">Preise</a></li>
+                        <li><a href="#testimonials" data-translate="navTestimonials">Testimonials</a></li>
+                        <li><a href="#faq" data-translate="navFAQ">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 data-translate="footerCol2Title">Ressourcen</h3>
+                    <ul>
+                        <li><a href="pages/blog.html" data-translate="footerBlog">Blog</a></li>
+                        <li><a href="pages/contact.html" data-translate="footerSupport">Support</a></li>
+                        <li><a href="pages/contact.html" data-translate="footerContact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 data-translate="footerCol3Title">Rechtliches</h3>
+                    <ul>
+                        <li><a href="pages/terms.html" data-translate="footerTerms">AGB</a></li>
+                        <li><a href="pages/privacy.html" data-translate="footerPrivacy">Datenschutz</a></li>
+                        <li><a href="pages/imprint.html" data-translate="footerImprint">Impressum</a></li>
+                        <li><a href="pages/cookies.html" data-translate="footerCookies">Cookie-Richtlinie</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 data-translate="footerCol4Title">Newsletter</h3>
+                    <p data-translate="footerNewsletterDesc">Melde dich für Updates an:</p>
+                    <form class="footer-form">
+                        <input type="email" placeholder="E-Mail-Adresse" required>
+                        <button type="submit" data-translate="footerSubscribe">Abonnieren</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 vocabo.ai | <span data-translate="footerRights">Alle Rechte vorbehalten.</span></p>
+            <div class="footer-lang">
+                <button id="footerLangDe" class="lang-btn-footer">Deutsch</button>
+                <span class="lang-separator">|</span>
+                <button id="footerLangEn" class="lang-btn-footer">English</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Partikelhintergrund für dynamische Effekte -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Vanilla-Tilt.js für 3D-Kippeffekte -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <!-- Hauptskript -->
+    <script src="script.js"></script>
+</body>
+</html> 
